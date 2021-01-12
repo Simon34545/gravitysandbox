@@ -44,6 +44,9 @@ class CelestialBody {
 		this.trails.push({x: this.position.x, y: this.position.y});
 	    if (this.trails.length > this.maxTrails) {
 		  this.trails.shift();
+		  if (this.trails.length > this.maxTrails) {
+		    this.trails.shift();
+	      }  
 	    }  
 	  } else if (this.trails != []) {
 		  this.trails = [];

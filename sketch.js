@@ -283,6 +283,48 @@ function loadGame() {
   }
 }
 
+function timeStepSliderPrompt() {
+  let timeStep = prompt("Universe.physicsTimeStep", timeStepSlider.value());
+  
+  if (timeStep == null || timeStep == undefined || timeStep == '' || timeStep.isEmpty() || parseFloat(timeStep) == 'NaN' || !parseFloat(timeStep)) {
+	alert('Invalid.');
+  } else {
+	timeStep = parseFloat(timeStep);
+	
+	if (timeStep < 0.01) {
+	  timeStepSlider.elt.min = timeStep;
+	} else if (timeStep > 10) {
+	  timeStepSlider.elt.max = timeStep;
+	} else {
+	  timeStepSlider.elt.min = 0.01;
+	  timeStepSlider.elt.max = 10;
+	}
+	
+	timeStepSlider.value(timeStep);
+  }
+}
+
+function gravConsSliderPrompt() {
+  let gravCons = prompt("Universe.gravitationalConstant", gravConsSlider.value());
+  
+  if (gravCons == null || gravCons == undefined || gravCons == '' || gravCons.isEmpty() || parseFloat(gravCons) == 'NaN' || !parseFloat(gravCons)) {
+	alert('Invalid.');
+  } else {
+	gravCons = parseFloat(gravCons);
+	
+	if (gravCons < 0.01) {
+	  gravConsSlider.elt.min = gravCons;
+	} else if (timeStep > 10) {
+	  gravConsSlider.elt.max = gravCons;
+	} else {
+	  gravConsSlider.elt.min = 0.01;
+	  gravConsSlider.elt.max = 10;
+	}
+	
+	gravConsSlider.value(timeStep);
+  }
+}
+
 function setup() {
   canvas = createCanvas(windowWidth - 150, windowHeight - 100)
   
@@ -337,10 +379,10 @@ function setup() {
 	}
   });
   
-  createSpan('Speed:<br>');
+  createSpan('<a href="javascript:timeStepSliderPrompt();">Speed:</a><br>');
   timeStepSlider = createSlider(0, 10, 0.01, 0.01);
   timeStepSlider.size(windowWidth - 4);
-  createSpan('Gravity:<br>');
+  createSpan('<a href="javascript:gravConsSliderPrompt();">Gravity:</a><br>');
   gravConsSlider = createSlider(0, 0.1, 0.0001, 0.0001);
   gravConsSlider.size(windowWidth - 4);
   offset.x = Math.round(windowWidth  / 2);
