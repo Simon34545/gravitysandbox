@@ -260,6 +260,22 @@ function loadGame() {
 	  
 	  sim.bodies.push(newBody);
 	}
+	if (parsedSaveData[parsedSaveData.length - 1].gravitationalConstant < 0.0001) {
+	  gravConsSlider.elt.min = parsedSaveData[parsedSaveData.length - 1].gravitationalConstant;
+	} else if (parsedSaveData[parsedSaveData.length - 1].gravitationalConstant > 0.1) {
+	  gravConsSlider.elt.max = parsedSaveData[parsedSaveData.length - 1].gravitationalConstant;
+	} else {
+	  gravConsSlider.elt.min = 0.0001;
+	  gravConsSlider.elt.max = 0.1;
+	}
+	if (parsedSaveData[parsedSaveData.length - 1].physicsTimeStep < 0.01) {
+	  timeStepSlider.elt.min = parsedSaveData[parsedSaveData.length - 1].physicsTimeStep;
+	} else if (parsedSaveData[parsedSaveData.length - 1].physicsTimeStep > 10) {
+	  timeStepSlider.elt.max = parsedSaveData[parsedSaveData.length - 1].physicsTimeStep;
+	} else {
+	  timeStepSlider.elt.min = 0.01;
+	  timeStepSlider.elt.max = 10;
+	}
 	gravConsSlider.value(parsedSaveData[parsedSaveData.length - 1].gravitationalConstant);
 	timeStepSlider.value(parsedSaveData[parsedSaveData.length - 1].physicsTimeStep);
 	offset = parsedSaveData[parsedSaveData.length - 1].offset;
