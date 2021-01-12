@@ -1,0 +1,76 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+  color: #fff;
+  font-family: Helvetica, Arial;
+  font-size: 16px;
+  overflow: hidden;
+}
+canvas {
+  display: block;
+  border-color: #f00;
+  border-bottom-style: solid;
+  border-right-style: solid;
+}
+
+#right-pane {
+  position: absolute;
+  right: 0px;
+  width: 150px;
+  font-size: 10px;
+}
+
+#body-label, #body-label2 {
+  padding-left: 3px;
+}
+
+#properties {
+  border-top: solid 1px #f00;
+  width: 150px;
+  margin-top: 22px;
+  padding: 3px;
+}
+
+input {
+  width: 75px;
+  position: absolute;
+  right: 4px;
+}
+
+input[type=number] {
+  width: 50px;
+}
+
+input[type=range] {
+  position: relative;
+}
+
+.vector {
+  position: relative;
+  right: 0px;
+}
+
+button {
+  width: 50px;
+  text-align: center;
+}
+
+.one {
+  position: absolute;
+  left: 3px;
+}
+
+.two {
+  position: absolute;
+  left: 53px;
+}
+
+.three {
+  position: absolute;
+  left: 103px;
+}
+
+#pp {
+  font-size: 6px;
+}

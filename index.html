@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.js"></script>
+    <!--script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/addons/p5.sound.min.js"></script-->
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+	<script src="jsonfn.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="icon" href="favicon.ico">
+	<title>Gravity Sandbox V1.0</title>
+    <meta charset="utf-8" />
+
+  </head>
+  <body>
+	<div id="right-pane">
+	  <label id="body-label">Centered on: nothing <br> <label id="body-label2">(Click an object to focus)</label></label>
+	  <br>
+	  <button id="new" class="one">New</button><button id="save" class="two">Save</button><button id="load" class="three">Load</button>
+	  <div id="properties" style="display: none;">
+	    <label id="prop-label">Properties of: "<a title="Reload Properties" href="javascript:openMenu(0);">Unnamed</a>" <br> (Click empty space to close.) <br></label>
+		<label>----------------- Physics:</label>
+		<br>
+		<label>Position:</label>
+		<br>
+		<label>X: </label><input type="number" placeholder="0" value="0" class="vector" id="px">
+		<label>Y: </label><input type="number" placeholder="0" value="0" class="vector" id="py">
+		<br>
+		<label>Velocity:</label>
+		<br>
+		<label>X: </label><input type="number" placeholder="0" value="0" class="vector" id="vx">
+		<label>Y: </label><input type="number" placeholder="0" value="0" class="vector" id="vy">
+		<br>
+		<label>Initial Velocity:</label>
+		<br>
+		<label>X: </label><input type="number" placeholder="0" value="0" class="vector" id="ix">
+		<label>Y: </label><input type="number" placeholder="0" value="0" class="vector" id="iy">
+		<br><br>
+		<label>Radius: </label><input type="number" placeholder="0" value="0" id="rd">
+		<br><br>
+		<label>Surface Gravity: </label><input type="number" placeholder="0" value="0" id="sg">
+		<br><br>
+		<label>Position Locked: </label><input type="checkbox" id="ps">
+		<br><br>
+		<label>----------------- Customize:</label>
+		<br>
+		<label>Name:</label>
+		<input type="text" placeholder="Unnamed" value="Unnamed" id="nm">
+		<br><br>
+		<label>Color: </label><input type="color" value="#ff0000" id="co">
+		<br><br>
+		<label><br>Enable Trails: </label><input type="checkbox" id="tr">
+		<br><br>
+		<label>Trail Color: </label><input type="color" value="#ff0000" id="tc"><br>
+		<br><br>
+		<label>Trail Length: </label><input type="number" placeholder="0" value="0" id="tl">
+		<br>
+		<label><br>Fade Trails: </label><input type="checkbox" id="ft">
+		<br>
+		<label><br>Draw Outline: </label><input type="checkbox" id="do">
+		<br>
+		<label><br>Show Name: </label><input type="checkbox" id="sn">
+		<br>
+		<label>----------------- Info:</label>
+		<br>
+		<span id="id">Id: 0</span>
+		<br>
+		<span id="pp">Previous Position: <br> (0, 0)</span>
+		<br>
+		<span id="ma">Mass: 0</span>
+		<br>
+		<button id="create">New</button><button id="apply">Apply</button><button id="destroy">Trash</button>
+	  </div>
+	</div>
+    <script src="Colours.js"></script>
+    <script src="Universe.js"></script>
+    <script src="CelestialBody.js"></script>
+    <script src="NBodySimulation.js"></script>
+    <script src="sketch.js"></script>
+  </body>
+</html>
